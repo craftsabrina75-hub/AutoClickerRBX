@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto-Clicker RBX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="rbxCounter">RBX: 0</div>
+  <button id="clickBtn">Клік!</button>
+  <button id="autoClickBtn">Авто-клікер</button>
+  <button id="withdrawBtn">Вивід / GamePass</button>
+  <script src="script.js"></script>
+</body>
+</html>

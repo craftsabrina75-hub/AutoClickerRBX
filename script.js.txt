@@ -1,0 +1,41 @@
+let rbx = 0;
+let autoClick = false;
+
+const counter = document.getElementById('rbxCounter');
+const clickBtn = document.getElementById('clickBtn');
+const autoClickBtn = document.getElementById('autoClickBtn');
+const withdrawBtn = document.getElementById('withdrawBtn');
+
+clickBtn.onclick = () => {
+  rbx += 100000000;
+  counter.innerText = "RBX: " + rbx.toLocaleString();
+}
+
+autoClickBtn.onclick = () => {
+  if (!autoClick) {
+    autoClick = true;
+    autoClickBtn.innerText = "Стоп Авто-клікер";
+    autoClicker();
+  } else {
+    autoClick = false;
+    autoClickBtn.innerText = "Авто-клікер";
+  }
+}
+
+function autoClicker() {
+  if(autoClick) {
+    rbx += 100000000;
+    counter.innerText = "RBX: " + rbx.toLocaleString();
+    setTimeout(autoClicker, 1000);
+  }
+}
+
+withdrawBtn.onclick = () => {
+  if (rbx >= 100000000) {
+    alert("Симуляція покупки GamePass! Списано 100 000 000 RBX.");
+    rbx -= 100000000;
+    counter.innerText = "RBX: " + rbx.toLocaleString();
+  } else {
+    alert("Недостатньо RBX для покупки GamePass.");
+  }
+}
